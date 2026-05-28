@@ -4,23 +4,31 @@
     <meta charset="UTF-8">
     <title>Мой первый сайт</title>
 
-<style>
+    <style>
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     background: rgb(207, 206, 248);
     display: flex;
     align-items: center;
     flex-direction: column;
+    justify-content: flex-start;
     gap: 20px;
     min-height: 100vh;
+    margin: 0;
+    padding: 30px 0;
 }
 
 .myself {
-    background: rgb(255, 255, 255);
+    background: rgb(250, 250, 250);
     padding: 40px;
     border-radius: 20px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
     text-align: center;
     position: relative;
+    margin-bottom: 40px;
 }
 
 .status {
@@ -35,13 +43,18 @@ body {
 
 .banner {
     position: relative;
+    width: fit-content;
+    margin: 0 auto;
+    margin-bottom: 40px;
 }
 
 .banner-img {
-    width: 450px;
+    width: 100%;
+    max-width: 450px;
     height: 250px;
     border-radius: 20px;
     object-fit: cover;
+    display: flex;
 }
 
 .banner-title {
@@ -60,8 +73,7 @@ body {
     background: rgba(130, 85, 192, 0.6);
     color: white;
     border-radius: 60px;
-    margin-top: -300px;
-}z      
+}     
 
 .menu {
     margin: 0 15px;
@@ -72,56 +84,165 @@ body {
     gap: 30px;
 }
 
-.menu p {
-    cursor: pointer;
+.menu a {
+    color: rgb(255, 255, 255);
+    text-decoration: none;
     transition: 0.3s;
 }
 
-.menu p:hover {
+.menu a:hover {
     color: rgb(228, 226, 226);
     transform: translateY(-1px);
 }
 
 .contact-form {
-    background: rgb(255, 255, 255);
+    background: rgb(250, 250, 250);
     padding: 30px;
     border-radius: 20px;
     display: flex;
     flex-direction: column;
     gap: 15px;
-    width: 300px;
+    width: 100%;
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+.contact-form input,
+.contact-form textarea {
+    padding: 15px;
+    border: 1px solid rgb(210, 210, 210);
+    border-radius: 10px;
+    font-size: 16px;
+    outline: none;
+}
+
+.contact-form textarea {
+    resize: none;
+    height: 100px;
+}
+
+.contact-form button {
+    padding: 15px;
+    background: rgb(130, 85, 192);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.contact-form button:hover {
+    background: rgb(90, 45, 150);
+}
+
+.about {
+    background: rgb(250, 255, 255);
+    margin-bottom: 40px;
+    width: 100%;
+    max-width: 700px;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.about h2 {
+    margin-top: 0;
+    text-align: center;
+}
+
+.about p {
+    line-height: 1.7;
+    text-align: center;
+}
+
+.skills {
+    background: rgb(250, 250, 250);
+    margin-bottom: 40px;
+    width: 100%;
+    max-width: 700px;
+    padding: 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+}
+
+.skills h2 {
+    text-align: center;
+}
+
+.skills-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+    justify-content: center;
+}
+
+.skill {
+    background: rgb(130, 85, 192);
+    color: white;
+    padding: 12px 20px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.skill:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
 }
 
 @media (max-width: 768px) {
     .navbar {
-        flex-direction: column;
-        gap: 20px;
+        width: 90%;
     }
 
     .menu {
-        flex-direction: column;
         gap: 10px;
+        text-align: center;
     }
-}
-    
 
-</style>
+    .myself,
+    .about,
+    .skills {
+        width: 90%;
+    }
 
+    .myself h1 {
+        font-size: 32px;
+    }
+
+    .about p {
+        font-size: 18px;
+    }
+
+    .banner {
+        width: 90%;
+    }
+
+    .banner-img {
+        max-width: 100%;
+        height: auto;
+    }
+
+    .contact-form {
+        width: 80%;
+    }
+    </style>
 </head>
 
-<nav class="navbar">
-    <h2 class="logo">Варвара</h2>
-
-    <div class="menu">
-        <p>About</p>
-        <p>Skills</p>
-        <p>Contact</p>
-    </div>
-
-</nav>
-
 <body>
-    <div class="myself">
+    <nav class="navbar">
+        <h2 class="logo">Варвара</h2>
+        
+        <div class="menu">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#contact">Contact</a>
+        </div>
+    </nav>
+
+    <main>
+     <div class="myself">
         <div class="status"></div>
         <h1>Меня зовут Варвара</h1>
         <p>Begginer Fronted Developer</p>
@@ -132,12 +253,33 @@ body {
         <h1 class="banner-title">Варвара</h1>
     </div>
 
-<form class="contact-form">
-    <input type="text" placeholder="Ваше имя">
-    <input type="email" placeholder="Ваш email">
-    <textarea placeholder="Ваше сообщение"></textarea>
-    <button type="submit">Отправить</button>
-</form>
+    <section class="about" id="about">
+        <h2>Обо мне</h2>
+        <p>Привет! Я начинающий фронтенд-разработчик, увлеченный созданием красивых и функциональных веб-сайтов. Я люблю экспериментировать с дизайном и всегда стремлюсь улучшать свои навыки. Моя цель - создавать уникальные и интуитивно понятные интерфейсы, которые будут радовать пользователей.</p> 
+    </section>
+
+    <section class="skills" id="skills">
+        <h2>Мои навыки</h2>
+        <div class="skills-list">
+            <div class="skill">HTML</div>
+            <div class="skill">CSS</div>
+            <div class="skill">GitHub</div>
+            <div class="skill">Frontend</div>
+            <div class="skill">Figma</div>
+        </div>
+                
+
+    <form class="contact-form "id="contact">
+        <input type="text" placeholder="Ваше имя">
+        <input type="email" placeholder="Ваш email">
+        <textarea placeholder="Ваше сообщение"></textarea>
+        <button type="submit">Отправить</button>
+    </form>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2026 Варвара. Все права защищены.</p>
+    </footer>
 
 </body>
 
