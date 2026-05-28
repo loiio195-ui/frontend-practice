@@ -73,6 +73,9 @@ body {
     background: rgba(130, 85, 192, 0.6);
     color: white;
     border-radius: 60px;
+    position: sticky;
+    top: 20px;
+    z-index: 1000;
 }     
 
 .menu {
@@ -227,6 +230,7 @@ body {
     .contact-form {
         width: 80%;
     }
+}
     </style>
 </head>
 
@@ -267,9 +271,9 @@ body {
             <div class="skill">Frontend</div>
             <div class="skill">Figma</div>
         </div>
-                
+    </section>
 
-    <form class="contact-form "id="contact">
+    <form class="contact-form" id="contact">
         <input type="text" placeholder="Ваше имя">
         <input type="email" placeholder="Ваш email">
         <textarea placeholder="Ваше сообщение"></textarea>
