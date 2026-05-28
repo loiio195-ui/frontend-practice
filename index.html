@@ -197,17 +197,21 @@ body {
 @media (max-width: 768px) {
     .navbar {
         width: 90%;
+        flex-direction: row;
+        padding: 10px 25px;
     }
 
     .menu {
-        gap: 10px;
+        gap: 20px;
         text-align: center;
+        flex-direction: row;
     }
 
     .myself,
     .about,
     .skills {
         width: 90%;
+        max-width: 700px;
     }
 
     .myself h1 {
@@ -223,12 +227,15 @@ body {
     }
 
     .banner-img {
-        max-width: 100%;
-        height: auto;
+        width: 100%;
+        max-width: 700px;
+        height: 250px;
+        object-fit: cover;
     }
 
     .contact-form {
         width: 80%;
+        max-width: 400px;
     }
 }
     </style>
