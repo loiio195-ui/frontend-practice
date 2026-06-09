@@ -10,7 +10,20 @@ html {
 }
 
 body {
-    background: rgb(207, 206, 248);
+    background:  
+        radial-gradient(circle at top left,
+        rgba(130, 85, 192, 0.3),
+        transparent 450px),
+
+        radial-gradient(circle at right center,
+        rgba(130, 85, 192, 0.25),
+        transparent 700px),
+
+        radial-gradient(circle at bottom left,
+        rgba(130, 85, 192, 0.3),
+        transparent 500px),
+
+        rgb(207, 206, 248);
     display: flex;
     align-items: center;
     flex-direction: column;
@@ -208,11 +221,31 @@ body {
     text-align: center;
 }
 
+.projects-grid {
+     display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+    transition: 0.3s;
+}
+
 .project-card {
+    max-width: 300px;
+    min-height: 500px;
+    margin: 0 auto;
+    margin-top: 20px;
+    transition: 0.3s;
     background: rgb(250, 250, 250);
-    padding: 20px;
-    border-radius: 15px;
-    margin-bottom: 20px;
+    padding: 10px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
 }
 
 .project-link {
@@ -273,10 +306,32 @@ body {
 
  <section class="projects" id="projects">
         <h2>Мои проекты</h2>
-        <div class="project-card">
-            <h3>Мой первый сайт</h3>
-            <p>Это мой первый учебный сайт-портфолио, который я создала, чтобы попрактиковаться в HTML и CSS.</p>
-            <a href="https://loiio195-ui.github.io/frontend-practice/" class="project-link" target="_blank">Посмотреть проект</a>
+        <div class="projects-grid">
+            <div class="project-card">
+             <h3>Мой первый сайт</h3>
+             <h4>Сфера:</h4>
+                <p>Личное портфолио</p>
+             <h4>Описание:</h4>
+                <p>Первый учебный проект по фронтенд-разработке</p>
+             <h4>Технологии:</h4>
+                <p>HTML, CSS, Flexbox, GitHub</p>
+            <div>
+             <a href="#" class="project-link" target="_blank">Посмотреть проект</a>
+            </div>
+            </div>     
+            
+            <div class="project-card">
+             <h3>Второй проект</h3>
+             <h4>Сфера:</h4>
+                <p></p>
+             <h4>Описание:</h4>
+                <p>Здесь позже будет описание второго проекта</p>
+             <h4>Технологии:</h4>
+                <p></p>
+            <div>
+             <a href="#" class="project-link" target="_blank">Посмотреть проект</a>
+            </div>
+            </div>
         </div>
     </section>
 
